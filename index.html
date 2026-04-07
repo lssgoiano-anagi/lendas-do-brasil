@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Jornada das Lendas - Livro-Jogo Brasileiro</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="/css/animacoes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Tela de Título -->
+        <section id="tela-inicio" class="tela ativa">
+            <div class="intro-animada">
+                <div class="logo-container">
+                    <h1 class="titulo-principal">A Jornada das Lendas</h1>
+                    <div class="sublinhado-magico"></div>
+                </div>
+                <p class="subtitulo">Um livro-jogo interativo brasileiro</p>
+                <div class="mapa-brasil-mini">🗺️</div>
+                <button id="btn-comecar" class="botao-magico">
+                    <span class="texto-botao">Iniciar Jornada</span>
+                    <span class="efeito-botao"></span>
+                </button>
+                <p class="creditos">Explore as lendas de todos os 27 estados do Brasil</p>
+            </div>
+            <div class="particulas">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </section>
+
+        <!-- Área do Jogo -->
+        <section id="area-jogo" class="tela">
+            <header class="cabecalho">
+                <div class="progresso-container">
+                    <div class="info-estado">
+                        <span class="label">Local:</span>
+                        <span id="estado-atual" class="valor">Início</span>
+                    </div>
+                    <div class="barra-progresso">
+                        <div id="barra" class="preenchimento"></div>
+                    </div>
+                    <div class="info-fragmentos">
+                        <span class="label">Fragmentos:</span>
+                        <span id="fragmentos" class="valor">0/27</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="conteudo-historia">
+                <div id="imagem-cena" class="imagem-animada">
+                    <div class="overlay-imagem"></div>
+                </div>
+                <div class="container-texto">
+                    <h2 id="titulo-cena" class="titulo-cena"></h2>
+                    <div id="texto-historia" class="texto-narrativa"></div>
+                </div>
+                
+                <div id="opcoes" class="container-opcoes">
+                    <!-- Botões gerados dinamicamente -->
+                </div>
+            </main>
+
+            <aside class="painel-itens">
+                <div class="cabecalho-itens">
+                    <h3>🎒 Inventário</h3>
+                </div>
+                <ul id="lista-itens" class="lista-itens">
+                    <li class="item-vazio">Nenhum item ainda...</li>
+                </ul>
+            </aside>
+
+            <nav class="menu-inferior">
+                <button id="btn-mapa" class="botao-menu">🗺️ Mapa</button>
+                <button id="btn-som" class="botao-menu">🔊 Som</button>
+                <button id="btn-salvar" class="botao-menu">💾 Salvar</button>
+            </nav>
+        </section>
+
+        <!-- Modal do Mapa -->
+        <div id="modal-mapa" class="modal">
+            <div class="conteudo-modal">
+                <button class="fechar-modal">✕</button>
+                <h2>Mapa do Brasil</h2>
+                <div id="mapa-brasil" class="mapa-interativo">
+                    <!-- Estados serão gerados aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/historia.js"></script>
+    <script src="/js/jogo.js"></script>
+    <script src="/js/audio.js"></script>
+</body>
+</html>
